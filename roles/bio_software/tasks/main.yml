@@ -1,0 +1,18 @@
+### assumes ubuntu
+---
+- name: update apt cache
+  apt: update_cache=yes
+  become: true
+
+- name: install packages
+  apt: 
+      pkg: 
+          - curl
+          - build-essential
+          - git
+          - pkg-config
+      state: latest
+  become: true
+
+- name: install docker
+  include_tasks: docker.yml
