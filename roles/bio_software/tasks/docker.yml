@@ -19,10 +19,10 @@
 
 - name: docker | install/update docker
   apt:
-    state: latest
+    state: present
     pkg:
-      - docker-ce
-      - docker-ce-cli
+      - docker-ce=5:20.10.14~3-0~ubuntu-focal
+      - docker-ce-cli=5:20.10.14~3-0~ubuntu-focal
       - containerd.io
     update_cache: yes
   become: true
